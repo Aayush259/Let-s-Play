@@ -1,0 +1,199 @@
+/* Removing default browser's CSS styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+    --Black: #000;
+}
+
+*::selection {
+    background-color: var(--Black) !important;
+    color: var(--White) !important;
+}
+
+body {
+    width: 96%;     /* Width of body container is 96% of the viewport and max-width is 1309px. */
+    max-width: 1309px;
+
+    /* Centered the body by setting it's margin left and right to auto. */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Hiding overflow in x-direction. */
+    overflow-x: hidden;
+
+    background-color: var(--Magnolia);
+}
+
+#header {
+    /* Making the element a flexbox with flex-direction row and centered items vertically with the space between them horizonally. */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.2rem;
+}
+
+h1 {
+    /* Resetting font-weight of heading element */
+    font-weight: 500;
+    font-family: Satisfy, Roboto, sans-serif;
+    letter-spacing: 1.5px;
+}
+
+h1::first-letter {
+    /* Increasing font size of first letter of h1 element. */
+    font-size: 2.5rem;
+}
+
+#header-image, .footer-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 400px;
+    transition: all 0.1s ease-in-out;
+}
+
+#header-image:hover, .footer-image:hover {
+    transform: scale(0.9);
+}
+
+#header-image:active, .footer-image:active {
+    transform: scale(1.05);
+}
+
+#main {
+    padding: 1.2rem;
+    color: var(--Marine-blue);
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+#footer {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+
+#footer > div, .social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#footer > div:nth-child(1) {
+    font-size: 1.6rem;
+}
+
+#footer > div:nth-child(2) {
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto 0 auto;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+}
+
+.social-links {
+    flex-wrap: wrap;
+    color: var(--Marine-blue);
+    text-decoration: none;
+    gap: 0.2rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.social-links:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transform: translateY(-4px);
+}
+
+@media only screen and (max-width: 500px) {
+
+    body {
+        width: 98%;
+    }
+    
+    #header {
+        color: var(--White);
+        background-color: #0f083a;
+        border-radius: 0 25px 5px 45px;
+    }
+
+    #learn-img {
+        width: 100%;
+    }
+
+    #main {
+        margin-top: 1rem;
+        background-color: var(--White);
+        border-radius: 25px 5px 45px 0;
+        font-size: 1.2rem;
+    }
+
+    #footer {
+        padding-top: 1rem;
+        margin-top: 1rem;
+        background-color: #0f083a;
+        border-radius: 0 45px 5px 25px;
+        color: var(--White);
+    }
+
+    .social-links {
+        color: var(--White);
+    }
+
+    .social-links img {
+        padding: 5px;
+        border-radius: 40px;
+        background-color: var(--White);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        width: 100vw;
+    }
+
+    #topic-container {
+        width: 100%;
+    }
+
+    .topic-link {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+
+    #topic-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    #footer > div {
+        flex-wrap: wrap;
+    }
+}

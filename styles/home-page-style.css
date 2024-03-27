@@ -1,0 +1,180 @@
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+    --Black: #000;
+}
+
+*::selection {
+    background-color: var(--Black) !important;
+    color: var(--White) !important;
+}
+
+#random-image {
+    width: 500px;
+}
+
+#learn-img {
+    border-radius: 0 35px 8px 95px;
+}
+
+.text-img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+#topic-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 80vw;
+    max-width: 1309px;
+    margin: 2.5rem auto 0 auto;
+}
+
+.topic-link {
+    /* Making the topic-link element a flexbox container to adjust image with the link text. */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    background-color: var(--Marine-blue);
+    border-radius: 12px;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+}
+
+.topic-link:hover {
+    transform: translateY(-4px);
+    background-color: var(--Black);
+}
+
+.quote-container {
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
+.quote-container > .quote {
+    padding: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-gray);
+    color: var(--Marine-blue);
+}
+
+.quote-container > .quote:nth-child(1) {
+    border-radius: 0 25px 8px 65px;
+}
+
+.quote-container > .quote:nth-child(2) {
+    border-radius: 65px 8px 25px 0;
+}
+
+.left-quote {
+    transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 1300px) {
+    .text-img-container > .text {
+        line-height: initial;
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    .text-img-container > .text {
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and (max-width: 1125px) {
+    .text-img-container {
+        gap: 15px;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    .text-img-container {
+        font-size: 1.2rem;
+    }
+
+    #learn-img {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 911px) {
+    #learn-img {
+        width: 60vw;
+    }
+
+    #random-image {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .text-img-container {
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .text-img-container > .text {
+        line-height: 1.5;
+    }
+
+    #topic-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quote-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #learn-img {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #learn-img {
+        border-radius: 0 35px 8px 65px;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+
+    #topic-container {
+        gap: 10px;
+    }
+}
