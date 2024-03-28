@@ -18,6 +18,10 @@
     --Alabaster: hsl(231, 100%, 99%);
     --White: hsl(0, 0%, 100%);
     --Black: #000;
+    --Light-red: #e73333;
+    --Red: #8f0505;
+    --Dark-green: #005a00;
+    --Green: #51e051da;
 }
 
 *::selection {
@@ -49,11 +53,13 @@ body {
     padding: 1.2rem;
 }
 
-h1 {
+h1 > a {
     /* Resetting font-weight of heading element */
     font-weight: 500;
     font-family: Satisfy, Roboto, sans-serif;
     letter-spacing: 1.5px;
+    color: var(--Black);
+    text-decoration: none;
 }
 
 h1::first-letter {
@@ -81,6 +87,45 @@ h1::first-letter {
     color: var(--Marine-blue);
     font-size: 1.3rem;
     letter-spacing: 0.5px;
+}
+
+.button-container, .answer-btn-container {
+    max-width: 700px;
+    width: 98%;
+    margin: 1rem auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#next-btn {
+    background-color: var(--Marine-blue);
+    color: var(--White);
+}
+
+#previous-btn {
+    color: var(--Cool-gray);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+#previous-btn:hover, #previous-btn:focus, .answer-btn:hover, .answer-btn:focus {
+    transform: translateY(-3px);
+}
+
+#next-btn:hover, #next-btn:focus {
+    opacity: 0.9;
 }
 
 #footer {
@@ -122,10 +167,43 @@ h1::first-letter {
     transform: translateY(-4px);
 }
 
+.answer-btn-container {
+    justify-content: space-around;
+    max-width: 400px;
+    width: 95%;
+    margin-top: 2rem;
+}
+
+.answer-btn {
+    background-color: var(--Light-gray);
+}
+
+.correct {
+    background-color: var(--Green);
+    color: var(--Dark-green);
+    border: 2px solid var(--Dark-green);
+    font-weight: 700;
+}
+
+.wrong {
+    background-color: var(--Light-red);
+    color: var(--Red);
+    border: 2px solid var(--Red);
+    font-weight: 700;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 500px) {
 
     body {
         width: 98%;
+    }
+
+    h1 > a {
+        color: var(--White);
     }
     
     #header {
@@ -178,7 +256,7 @@ h1::first-letter {
         padding-left: 0;
     }
 
-    h1 {
+    h1 > a {
         font-size: 1.5rem;
     }
 }
@@ -189,7 +267,7 @@ h1::first-letter {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    h1 {
+    h1 > a {
         font-size: 1rem;
     }
 
